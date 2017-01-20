@@ -22,9 +22,24 @@
   <body class="container">
     <div ng-controller ="MainCtrl">
 
-    <h1> Web Check Visitor Stats</h1>
+    <h1> Anagram Checker</h1>
 
-  {{1+2}}
+    <form ng-submit="submit()">
+    <div class="form-group">
+      <label for="wordone">Word 1</label>
+      <input type="text" class="form-control" id="wordone" ng-model="wordone" aria-describedby="emailHelp" placeholder="Enter word" required>
+
+    </div>
+    <div class="form-group">
+      <label for="wordtwo">Word two</label>
+      <input type="text" class="form-control" id="wordtwo" ng-model="wordtwo" placeholder="Enter word two" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+    <div class="message">
+      {{message}}
     </div>
 
   </div>

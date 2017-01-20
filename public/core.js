@@ -1,26 +1,32 @@
 var app = angular.module('myApp', ['ui.bootstrap']);
-//
-// app.config(function($routeProvider) {
-//   $routeProvider
-//     .when('/', {
-//       templateUrl: 'index.html',
-//       controller: 'MainCtrl',
-//       resolve: {
-//         // delay: function($q, $timeout) {
-//         //   var delay = $q.defer();
-//         //   $timeout(delay.resolve, 1000);
-//         //   return delay.promise;
-//         // }
-//       }
-//     })
-//     .otherwise({
-//       redirectTo: '/'
-//     });
-// });
+
+app.controller('MainCtrl', function($scope, $http, $timeout){
+
+  $scope.submit = function() {
+    $scope.message='';
+
+    var arrayone = $scope.wordone.toLowerCase().split("").sort();
+    var arraytwo = $scope.wordtwo.toLowerCase().split("").sort();
 
 
 
-app.controller('MainCtrl', function($scope, $http){
-  
+       if (arrayone.toString() === arraytwo.toString()){
+         console.log("angram");
+         $scope.message="anagram";
 
+       } else {
+         console.log("not angram");
+         $scope.message="not anagram";
+       }
+
+       console.log($scope.message);
+       $timeout(function () { $scope.message = ""; }, 3000);  
+
+
+          $scope.wordone='';
+          $scope.wordtwo='';
+
+
+
+        };
 });
