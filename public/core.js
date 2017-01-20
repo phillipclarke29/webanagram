@@ -11,15 +11,12 @@ app.controller('MainCtrl', function($scope, $http, $timeout){
 
 
        if (arrayone.toString() === arraytwo.toString()){
-         console.log("angram");
            $scope.message=$scope.wordone + " is an anagram of " + $scope.wordtwo;
-
-       } else {
-         console.log("not angram");
+         } else {
         $scope.message=$scope.wordone + " is not an anagram of " + $scope.wordtwo;
        }
 
-       console.log($scope.message);
+
        $timeout(function () { $scope.message = ""; }, 3000);
 
 
